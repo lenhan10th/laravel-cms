@@ -20,6 +20,11 @@ Route::get('index',[
 	'uses'=>'PageController@getIndex'
 ]);
 
+Route::get('san-pham',[
+	'as'=>'sanpham',
+	'uses'=>'PageController@getSanPham'
+]);
+
 Route::get('loai-san-pham/{type}',[
 	'as'=>'loaisanpham',
 	'uses'=>'PageController@getLoaiSp'

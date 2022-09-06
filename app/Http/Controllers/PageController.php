@@ -25,6 +25,11 @@ class PageController extends Controller
         return view('page.trangchu',compact('slide','new_product','sanpham_khuyenmai'));
     }
 
+    public function getSanPham(){
+        $products = null;// Product::all()->paginate(4);
+        return view('page.sanpham',compact('products'));
+    }
+
     public function getLoaiSp($type){
         $sp_theoloai = Product::where('id_type',$type)->get();
         $sp_khac = Product::where('id_type','<>',$type)->paginate(3);
