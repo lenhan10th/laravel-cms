@@ -26,8 +26,11 @@ class PageController extends Controller
     }
 
     public function getSanPham(){
-        $products = null;// Product::all()->paginate(4);
-        return view('page.sanpham',compact('products'));
+        $products = Product::paginate(9);
+        $products_all = Product::all();
+        //$products_all = $products->total();
+        $loai = ProductType::all();
+        return view('page.sanpham',compact('products', 'loai', 'products_all'));
     }
 
     public function getLoaiSp($type){
